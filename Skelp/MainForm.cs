@@ -23,16 +23,8 @@ namespace Skelp
             CreateHDD(_ran.Next(20));
             CreateProcessor(_ran.Next(15));
             CreateKeyboard(_ran.Next(25));
+            CreateMouse(_ran.Next(40));
         }
-
-        private void CreateKeyboard(int keyboardCount)
-        {
-            for (int i = 0; i < keyboardCount; i++)
-            {
-
-            }
-        }
-
         private void CreateHDD(int hDDCount)
         {
             for (int i = 0; i < hDDCount; i++)
@@ -63,7 +55,37 @@ namespace Skelp
                 _products.Add(proc);
             }
         }
-        
+        private void CreateKeyboard(int keyboardCount)
+        {
+            for (int i = 0; i < keyboardCount; i++)
+            {
+                Keyboard kb = new Keyboard();
+                kb.manufacturer = "KeyboardManufacturer" + i;
+                kb.title = "QuietKeyboard" + 2 * i;
+                kb.price = _ran.Next(69, 210);
+                kb.id_number = _ran.Next(100, 300);
+                kb.stock_amount = _ran.Next(0, 3);
+                kb.buttons = _ran.Next(80, 140);
+                _products.Add(kb);
+            }
+        }
+        private void CreateMouse(int mouseCount)
+        {
+            for (int i = 0; i < mouseCount; i++)
+            {
+                Mouse mouse = new Mouse();
+                mouse.manufacturer = "MM" + i;
+                mouse.title = "GamingMouse" + i;
+                mouse.price = _ran.Next(29, 99);
+                mouse.id_number = _ran.Next(1000, 9999);
+                mouse.stock_amount = _ran.Next(0, 7);
+                mouse.buttons = _ran.Next(2, 12);
+                mouse.dpi = _ran.Next(800, 2400);
+                mouse.weight = _ran.Next(120, 370);
+                _products.Add(mouse);
+            }
+        }
+
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {

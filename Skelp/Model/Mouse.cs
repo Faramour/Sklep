@@ -2,9 +2,8 @@
 {
     public class Mouse : Product
     {
-        public string type;//czy bezprzewodowa? Tak Nie
         public int buttons;//liczba dodatkowych przycisków typu Po boku myszki
-        public int dpi;
-        public double weight;
+        public int dpi;//od 800 do 1600
+        public double weight;//w gramach
     }
 }
